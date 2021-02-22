@@ -5,18 +5,22 @@ function validate()
   var pwd_cnf = document.getElementById('password_confirmation').value;
   var email = document.getElementById('email').value;
   var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
+  var nameformat= /^[a-zA-Z]/;
+  var pwdformat=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]/;
   if(user == "")
     {
-      document.getElementById('alert-first_name').innerHTML ="Please fill the username field";
+      document.getElementById('alert-first_name').innerHTML ="first_name can't be empty";
       return false;
     }
   if((user.length <= 2) || (user.length > 20)){
       document.getElementById('alert-first_name').innerHTML =" Username lenght must be between 2 and 20";
       return false;
     }
-    if(!isNaN(user)){
-      document.getElementById('alert-first_name').innerHTML =" only characters are allowed";
+    if(user.match(nameformat)){
+        document.getElementById('first_name').style.color='green';
+    }
+    else{
+      document.getElementById('alert-first_name').innerHTML ="The name is invalid";
       return false;
     }
   if(email == ""){
@@ -31,6 +35,13 @@ function validate()
         document.getElementById('alert-email').innerHTML =" Please enter a valid email";
         return false;
       }
+    if (pwd.match(pwdformat)){
+      document.getElementById('password').style.color='green';
+    }
+    else{
+      document.getElementById('alert-pwd').innerHTML =" Please enter a valid password";
+      return false;
+    }
 
     if(pwd == ""){
       document.getElementById('alert-pwd').innerHTML =" Please fill the password field";
