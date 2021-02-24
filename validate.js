@@ -14,7 +14,7 @@ function validate()
       return false;
     }
   if((user.length <= 2) || (user.length > 20)){
-      document.getElementById('alert-first_name').innerHTML =" Username lenght must be between 2 and 20";
+      document.getElementById('alert-first_name').innerHTML =" First Name lenght must be between 2 and 20";
       document.getElementById('alert-first_name').style.color="red";
       return false;
     }
@@ -68,10 +68,21 @@ function validate()
       document.getElementById('alert-pwd_cnf').style.color="red";
       return false;
     }
+    if(pwd==pwd_cnf){
+      document.getElementById('alert-pwd_cnf').innerHTML =" Password match";
+      document.getElementById('alert-pwd_cnf').style.color="green";
+    }
 
     if(pwd_cnf == ""){
       document.getElementById('alert-pwd_cnf').innerHTML =" Can't leave the field empty";
       document.getElementById('alert-pwd_cnf').style.color="red";
       return false;
     }
+}
+function reset_errors(){
+  document.getElementById('alert-first_name').innerHTML="";
+  document.getElementById('alert-email').innerHTML="";
+  document.getElementById('alert-pwd').innerHTML="";
+  document.getElementById('alert-pwd_cnf').innerHTML="";
+
 }
