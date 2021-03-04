@@ -1,11 +1,21 @@
 body{
-    background-color: #525252;
+      text-align: center;
+    background-color: lightgrey;
+    padding: 100px 150px 0 150px;
 }
-.centered-form{
+/* .centered-form{
 	margin-top: 60px;
-}
+} */
+
 
 .centered-form .panel{
 	background: rgba(255, 255, 255, 0.8);
 	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+.flex{
+  display: flex;
+  text-align: center;
+}
+.width{
+  width: 100%;
 }
